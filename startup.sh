@@ -11,6 +11,7 @@ git clone https://github.com/Snapkite/snapkite-filter-has-mobile-photo ../resour
 git clone https://github.com/Snapkite/snapkite-filter-has-text ../resources/snapkite-engine/filters/snapkite-filter-has-text/
 git clone https://github.com/Snapkite/snapkite-filter-is-retweet ../resources/snapkite-engine/filters/snapkite-filter-is-retweet/
 echo ">>> Copying Snapkite filter config files"
+cp ../resources/snapkite-engine/example.config.json ../resources/snapkite-engine/config.json
 cp ../resources/snapkite-engine/filters/snapkite-filter-has-mobile-photo/example.config.json ../resources/snapkite-engine/filters/snapkite-filter-has-mobile-photo/config.json
 cp ../resources/snapkite-engine/filters/snapkite-filter-has-text/example.config.json ../resources/snapkite-engine/filters/snapkite-filter-has-text/config.json
 cp ../resources/snapkite-engine/filters/snapkite-filter-is-possibly-sensitive/example.config.json ../resources/snapkite-engine/filters/snapkite-filter-is-possibly-sensitive/config.json
