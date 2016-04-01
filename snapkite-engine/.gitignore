@@ -8,7 +8,7 @@ config.json
 # Snapkite filters
 ###############################
 
-
+filters/snapkite-filter-*
 
 ###############################
 # Node modules
