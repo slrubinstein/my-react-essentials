@@ -18822,34 +18822,103 @@ var ReactDOM = require('react-dom');
 var ReactClass = React.createClass({
 	displayName: 'ReactClass',
 
+	getDefaultProps: function () {
+		console.log('getDefaultProps');
+	},
+
 	getInitialState: function () {
-		console.log('getInitialState called');
+		console.log('getInitialState');
 		return {
 			isHeaderHidden: false
 		};
 	},
 
-	handleClick: function () {
+	componentWillMount: function () {
+		console.log('componentWillMount');
+	},
+
+	componentDidMount: function () {
+		console.log('componentDidMount');
+	},
+
+	componentWillReceiveProps: function () {
+		console.log('componentWillReceiveProps - App');
+	},
+
+	shouldComponentUpdate: function () {
+		console.log('shouldComponentUpdate');
+		return true;
+	},
+
+	componentWillUpdate: function () {
+		console.log('componentWillUpdate');
+	},
+
+	componentDidUpdate: function () {
+		console.log('componentDidUpdate');
+	},
+
+	componentWillUnmount: function () {
+		console.log('componentWillUnmount');
+	},
+
+	_updateHeaderVisibility: function () {
 		this.setState({
 			isHeaderHidden: !this.state.isHeaderHidden
 		});
 	},
 
 	render: function () {
-		console.log('render called');
+		console.log('render');
 		var title = 'Stateful React Component';
-		var headerElement = React.createElement('h1', { className: 'header', key: 'header' }, title);
-		var buttonElement = React.createElement('button', { className: 'btn btn-default', onClick: this.handleClick, key: 'button' }, 'Toggle header');
+
+		headerElement = React.createElement(
+			'h1',
+			{ className: 'header', key: 'header' },
+			' ',
+			title,
+			' '
+		);
 
 		if (this.state.isHeaderHidden) {
-			return React.createElement('div', null, [buttonElement]);
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(ReactButton, { buttonClick: this._updateHeaderVisibility })
+			);
 		}
 
-		return React.createElement('div', null, [buttonElement, headerElement]);
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(ReactButton, { buttonClick: this._updateHeaderVisibility }),
+			headerElement
+		);
 	}
 
 });
-var reactComponentElement = React.createElement(ReactClass);
-var reactComponent = ReactDOM.render(reactComponentElement, document.getElementById('react-application'));
+
+var ReactButton = React.createClass({
+	displayName: 'ReactButton',
+
+
+	componentWillReceiveProps: function () {
+		console.log('componentWillReceiveProps - Button');
+	},
+
+	_handleClick: function () {
+		this.props.buttonClick();
+	},
+
+	render: function () {
+		return React.createElement(
+			'button',
+			{ className: 'btn btn-default', onClick: this._handleClick, key: 'button' },
+			' Toggle header '
+		);
+	}
+});
+
+ReactDOM.render(React.createElement(ReactClass, null), document.getElementById('react-application'));
 
 },{"react":157,"react-dom":1}]},{},[158]);

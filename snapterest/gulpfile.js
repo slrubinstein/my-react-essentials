@@ -4,7 +4,7 @@ var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 
 gulp.task('default', function() {
-	return browserify('./source/app3.js')
+	return browserify('./source/app3.jsx')
 		.transform(babelify, { presets: ["react"] } )
 		.bundle()
 		.pipe(source('snapterest.js'))
