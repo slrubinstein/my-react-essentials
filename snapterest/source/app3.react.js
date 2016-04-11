@@ -13,6 +13,7 @@ var ReactClass = React.createClass({
 		};
 	},
 
+
 	componentWillMount: function() {
 		console.log('componentWillMount');
 	},
