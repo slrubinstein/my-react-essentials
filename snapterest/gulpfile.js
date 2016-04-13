@@ -14,7 +14,6 @@ gulp.task('default', function() {
 
 gulp.task('watch', function() {
   watch('source/*.js', function () {
-  	console.log('=============', arguments, '=======================')
     gulp.start('default');
 	});
 })
