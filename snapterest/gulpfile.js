@@ -13,7 +13,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('watch', function() {
-  watch('source/*.js', function () {
+    watch('source/*.js', function () {
         gulp.start('default');
-	});
+    });
 })
