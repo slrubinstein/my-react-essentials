@@ -3,44 +3,43 @@ var ReactDOM = require('react-dom');
 
 var ReactClass = React.createClass({
 	getDefaultProps: function() {
-		console.log('getDefaultProps');
+		console.log('APP - getDefaultProps');
 	},
 
 	getInitialState: function() {
-		console.log('getInitialState');
+		console.log('APP - getInitialState');
 		return {
 			isHeaderHidden: false
 		};
 	},
 
-
 	componentWillMount: function() {
-		console.log('componentWillMount');
+		console.log('APP - componentWillMount');
 	},
 
 	componentDidMount: function() {
-		console.log('componentDidMount');
+		console.log('APP - componentDidMount');
 	},
 
 	componentWillReceiveProps: function() {
-		console.log('componentWillReceiveProps - App');
+		console.log('APP - componentWillReceiveProps');
 	},
 
 	shouldComponentUpdate: function() {
-		console.log('shouldComponentUpdate');
+		console.log('APP - shouldComponentUpdate');
 		return true;
 	},
 
 	componentWillUpdate: function() {
-		console.log('componentWillUpdate');
+		console.log('APP - componentWillUpdate');
 	},
 
 	componentDidUpdate: function() {
-		console.log('componentDidUpdate');
+		console.log('APP - componentDidUpdate');
 	},
 
 	componentWillUnmount: function() {
-		console.log('componentWillUnmount');
+		console.log('APP - componentWillUnmount');
 	},
 
 	_updateHeaderVisibility: function() {
@@ -50,7 +49,7 @@ var ReactClass = React.createClass({
 	},
 
 	render: function() {
-		console.log('render');
+		console.log('APP - render');
 		var title = 'Stateful React Component';
 
 		headerElement = <h1 className="header" key="header"> {title} </h1>;
@@ -74,9 +73,45 @@ var ReactClass = React.createClass({
 });
 
 var ReactButton = React.createClass({
+	getDefaultProps: function() {
+		console.log('BUTTON - getDefaultProps');
+	},
+
+	getInitialState: function() {
+		console.log('BUTTON - getInitialState');
+		return {
+			isHeaderHidden: false
+		};
+	},
+
+
+	componentWillMount: function() {
+		console.log('BUTTON - componentWillMount');
+	},
+
+	componentDidMount: function() {
+		console.log('BUTTON - componentDidMount');
+	},
 
 	componentWillReceiveProps: function() {
-		console.log('componentWillReceiveProps - Button');
+		console.log('BUTTON - componentWillReceiveProps');
+	},
+
+	shouldComponentUpdate: function() {
+		console.log('BUTTON - shouldComponentUpdate');
+		return true;
+	},
+
+	componentWillUpdate: function() {
+		console.log('BUTTON - componentWillUpdate');
+	},
+
+	componentDidUpdate: function() {
+		console.log('BUTTON - componentDidUpdate');
+	},
+
+	componentWillUnmount: function() {
+		console.log('BUTTON - componentWillUnmount');
 	},
 
 	_handleClick: function() {
@@ -84,6 +119,7 @@ var ReactButton = React.createClass({
 	},
 
 	render: function() {
+		console.log('BUTTON - render');
 		return <button className="btn btn-default" onClick={this._handleClick} key="button"> Toggle header </button>;
 	}
 });
