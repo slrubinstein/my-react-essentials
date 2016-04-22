@@ -4,11 +4,11 @@ var Collection = React.createClass({
 
 	style: {
 		border: "1px solid red",
-    color: "blue",
-    fontSize: "18px",
-    background: "yellow",
-    padding: "18px",
-    fontWeight: "bold"
+        color: "blue",
+        fontSize: "18px",
+        background: "yellow",
+        padding: "18px",
+        fontWeight: "bold"
 	},
 
 	render: function() {

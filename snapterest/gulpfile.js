@@ -12,10 +12,10 @@ gulp.task('browserify', function() {
 		.bundle()
 		.pipe(source('snapterest.js'))
 		.pipe(gulp.dest('./build/'));
-})
+});
 
 gulp.task('watch', function() {
-  return watch('source/**/*.js', function () {
-    gulp.start('browserify');
+    return watch('source/**/*.js', function () {
+        gulp.start('browserify');
 	});
-})
+});
