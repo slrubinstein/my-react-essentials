@@ -6,7 +6,7 @@ describe('Button component', function() {
 
 		var React = require('react');
 		var TestUtils = require('react-addons-test-utils');
-		var Button = require('../Button.react');
+		var Button = require('../../components/Button.react');
 		var handleClick = jest.genMockFunction();
 
 		var button = TestUtils.renderIntoDocument(

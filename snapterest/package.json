@@ -16,9 +16,11 @@
     "gulp": "^3.9.1",
     "gulp-watch": "^4.3.5",
     "jest-cli": "^12.0.2",
+    "react-addons-test-utils": "^15.0.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "flux": "^2.1.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
     "snapkite-stream-client": "^1.0.3"
@@ -34,6 +36,8 @@
     ]
   },
   "babel": {
-    "presets": ["react"]
+    "presets": [
+      "react"
+    ]
   }
 }
